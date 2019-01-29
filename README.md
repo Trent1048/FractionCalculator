@@ -11,6 +11,13 @@ A calculator that lets you input fractions and mixed numbers and returns the mos
 **Mixed Numbers:** 5_4/6 98_21/67
 
 **Operations:** * / + - 
+
 Can only do one operation 
+
 Must have a space in between the first and second number
+
 1_2/3 + 5
+
+## Use
+
+Run the FracCalc.jar to use the fraction calculator 
