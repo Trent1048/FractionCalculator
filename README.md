@@ -20,4 +20,4 @@ Must have a space in between the first and second number
 
 ## Use
 
-Run the FracCalc.jar to use the fraction calculator 
+Run the FracCalc.jar in cmd to use the fraction calculator or click on the handy run.bat file to do it for you
