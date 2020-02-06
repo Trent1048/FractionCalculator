@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FractionCalculator:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/FractionCalculator_jar</output-path>
+    <root id="archive" name="FractionCalculator.jar">
+      <element id="module-output" name="FractionCalculator" />
+    </root>
+  </artifact>
+</component>

@@ -6,7 +6,11 @@ public class FractionCalculator {
 		Scanner console = new Scanner(System.in);
 		String input = "who lives in a pineapple under the sea?";
 		while(!input.equals("quit")){
-			System.out.println(processInput(input));
+			try {
+				System.out.println(processInput(input));
+			} catch (Exception e) {
+				System.out.println("INVALID INPUT");
+			}
 			System.out.print("Input: ");
 			input = console.nextLine();
 		}
@@ -24,9 +28,9 @@ public class FractionCalculator {
 		if(d1 == 0 || d2 == 0){
 			return "ERROR: cannot divide by zero";
 		}
-		int whole = 0;
-		int nume = 0;
-		int denom = 0;
+		int whole;
+		int nume;
+		int denom;
 		if(operator == '-'){
 			nume = findCommonDenom(topHeavafyFraction(whole1, n1, d1)[0], topHeavafyFraction(whole1, n1, d1)[1], topHeavafyFraction(whole2, n2, d2)[0], topHeavafyFraction(whole2, n2, d2)[1])[0] - findCommonDenom(topHeavafyFraction(whole1, n1, d1)[0], topHeavafyFraction(whole1, n1, d1)[1], topHeavafyFraction(whole2, n2, d2)[0], topHeavafyFraction(whole2, n2, d2)[1])[1];
 			denom = findCommonDenom(topHeavafyFraction(whole1, n1, d1)[0], topHeavafyFraction(whole1, n1, d1)[1], topHeavafyFraction(whole2, n2, d2)[0], topHeavafyFraction(whole2, n2, d2)[1])[2];
@@ -90,7 +94,7 @@ public class FractionCalculator {
 		}
 		//loops through checking to see if it is simplifyable and breaks when it no longer becomes simpleir
 		boolean canSimp = true;
-		int preSimpDenom = denomenator;
+		int preSimpDenom;
 		while(canSimp){
 			preSimpDenom = denomenator;
 			for(int num = 1; num < denomenator/2 + 1; num++){
@@ -116,8 +120,7 @@ public class FractionCalculator {
 		int nume1 = n1 * d2;
 		int nume2 = n2 * d1;
 		int commDenom = d1 * d2;
-		int[] commFrac = {nume1, nume2, commDenom};
-		return commFrac;
+		return new int[]{nume1, nume2, commDenom};
 	}
 	
 	public static String processInput(String str){
@@ -168,9 +171,9 @@ public class FractionCalculator {
 				}
 			}
 			if(str.contains(" " + operator + " ")){
-				if(!str.substring(operIndex, str.length()).contains("_")){
-					if(!str.substring(operIndex + 3, str.length()).contains("/")){
-						whole2 = Integer.parseInt(str.substring(operIndex + 3, str.length()));
+				if(!str.substring(operIndex).contains("_")){
+					if(!str.substring(operIndex + 3).contains("/")){
+						whole2 = Integer.parseInt(str.substring(operIndex + 3));
 					} else {
 						numerator2 = Integer.parseInt(str.substring(operIndex + 3, locateNextChar(str.substring(operIndex + 3), 0, '/') + operIndex + 3));
 					}

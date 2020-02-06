@@ -20,4 +20,4 @@ Must have a space in between the first and second number
 
 ## Use
 
-Clone/download the repository and click on run.bat. Optionally, you can get to the online version here https://repl.it/@TrentBultsma/FractionCalculator
+Clone/download the repository and run the jar file. Optionally, you can get to the online version here https://repl.it/@TrentBultsma/FractionCalculator
